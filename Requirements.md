@@ -26,19 +26,19 @@
 ## Use Cases <Add name of who will write (this specific requirement) and implement (in subsequent milestones) the use case below>
 
 
-## 6. Use Case: Delete Recipe
-**impemented by:** Tonny Lee
-**Pre-condition:** The user has logged in and the recipe's author is the current logged-in user.
-**Trigger:** The user clicks “Delete” button.
-**Primary Sequence:**
-- User selects a recipe
-- User clicks the “Delete” button
-- System prompts a warming to user asking if the user wants to delete the post
-- User clicks “yes” to confirm deletion.
-**Primary Postconditions:**
-  If confirmed, the recipe is deleted. User can’t see the recipe on any page.
-**Alternate Sequence:**
-- System loses connection.
-- System displays an error message: "Unable to delete recipe. Please try again later."
-- System redirect user back to the recipe page
+## 6. Use Case: Delete Recipe  
+**impemented by:** Tonny Lee  
+**Pre-condition:** The user has logged in and the recipe's author is the current logged-in user.  
+**Trigger:** The user clicks “Delete” button.  
+**Primary Sequence:**  
+- User selects a recipe  
+- User clicks the “Delete” button  
+- System prompts a warming to user asking if the user wants to delete the post  
+- User clicks “yes” to confirm deletion.  
+**Primary Postconditions:**  
+  If confirmed, the recipe is deleted. User can’t see the recipe on any page.  
+**Alternate Sequence:**  
+- System loses connection.  
+- System displays an error message: "Unable to delete recipe. Please try again later."  
+- System redirect user back to the recipe page  
 
