@@ -36,7 +36,8 @@
 - System prompts a warming to user asking if the user wants to delete the post  
 - User clicks “yes” to confirm deletion.
 **Primary Postconditions:**  
-  If confirmed, the recipe is deleted. User can’t see the recipe on any page.  
+- If confirmed, the recipe is deleted.
+- User can’t see the recipe on any page.  
 **Alternate Sequence:**  
 - System loses connection.  
 - System displays an error message: "Unable to delete recipe. Please try again later."  
