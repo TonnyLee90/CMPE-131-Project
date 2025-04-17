@@ -34,7 +34,7 @@
 - User selects a recipe  
 - User clicks the “Delete” button  
 - System prompts a warming to user asking if the user wants to delete the post  
-- User clicks “yes” to confirm deletion.  
+- User clicks “yes” to confirm deletion.
 **Primary Postconditions:**  
   If confirmed, the recipe is deleted. User can’t see the recipe on any page.  
 **Alternate Sequence:**  
