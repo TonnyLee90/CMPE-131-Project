@@ -11,10 +11,11 @@
 8. Search Recipe: This function allows logged-in users to rate a recipe from 1 to 5 stars.
 9. Rate Recipe: This function allows users to search for recipes by title or ingredient keywords.
 10. Comment on Recipe: This function allows logged-in users to submit text comments on a recipe.
-11. requirement
-12. requirement
-13. requirement
-14. requirement
+11. View User Profile: This function allows logged-in users to view their own profile, including all recipes they have submitted.
+12. Edit User Profile: This function allows logged-in users to update their profile information such as display name, email, or password.
+13. Save Recipe (Favorites): This function allows logged-in users to save or "favorite" recipes to easily access them later.
+14. View All Recipes: This function allows any user to view a complete list of all available recipes on the homepage or main recipe list page.
+15. Filter Recipes: This function allows users to filter recipes based on specific tags such as 'vegan', 'dessert', or other categories.
 
 <using the syntax [](images/ui1.png) add images in a folder called images/ and place sketches of your webpages>
 
@@ -113,74 +114,77 @@
 - The system displays an error message to the user.
 - The system prompts the user to comment again.
 
-11. View User Profile
-- Pre-condition: User is logged in.
-- Trigger: User clicks the “Profile” link in the navigation bar.
-- Primary Sequence:
-1. User logs into the application.
-2. User clicks on “Profile” in the navigation.
-3. System queries the database for user info and their recipes.
-4. System displays user information including name, email, and submitted recipes.
-- Primary Postconditions: Profile page is rendered with user data and their recipes listed.
-- Alternate Sequence:
-1. User session has expired.
-2. System redirects user to login page.
-
-12. Edit User Profile
-- Pre-condition: User is logged in and viewing their own profile.
-- Trigger: User clicks “Edit Profile”.
-- Primary Sequence:
-1. User navigates to their profile page.
-2. User clicks “Edit Profile” button.
-3. System presents a form with current info pre-filled.
-4. User edits name, email, or password and submits the form.
-5. System validates the input.
-6. System updates the user info in the database.
-7. User is redirected back to the profile page with a success message.
-- Primary Postconditions: User data is updated in the system.
-- Alternate Sequence:
-1. User enters an invalid email.
+11. Edit User Profile  
+- Pre-condition: User is logged in and viewing their own profile.  
+- Trigger: User clicks “Edit Profile”.  
+- Primary Sequence:  
+1. User navigates to their profile page.  
+2. User clicks “Edit Profile” button.  
+3. System presents a form with current info pre-filled.  
+4. User edits name, email, or password and submits the form.  
+5. System validates the input.  
+6. System updates the user info in the database.  
+7. User is redirected back to the profile page with a success message.  
+- Primary Postconditions:  
+User data is updated in the system.  
+- Alternate Sequence:  
+1. User enters an invalid email.  
 2. System displays error and does not update the profile.
 
-13. Save Recipe (Favorites)
-- Pre-condition: User is logged in and viewing a recipe.
-- Trigger: User clicks the “Save” or “Favorite” button on a recipe.
-- Primary Sequence:
-1. User logs in and navigates to a recipe page.
-2. User clicks the “Favorite” button.
-3. System checks if recipe is already favorited.
-4. If not, system creates a favorite entry in the database.
-5. UI updates to show recipe is saved (e.g., filled heart icon).
-- Primary Postconditions: Recipe is added to the user's list of favorites.
-- Alternate Sequence:
-1. User clicks favorite again on a saved recipe.
+12. Save Recipe (Favorites)  
+- Pre-condition: User is logged in and viewing a recipe.  
+- Trigger: User clicks the “Save” or “Favorite” button on a recipe.  
+- Primary Sequence:  
+1. User logs in and navigates to a recipe page.  
+2. User clicks the “Favorite” button.  
+3. System checks if recipe is already favorited.  
+4. If not, system creates a favorite entry in the database.  
+5. UI updates to show recipe is saved (e.g., filled heart icon).  
+- Primary Postconditions:  
+Recipe is added to the user's list of favorites.  
+- Alternate Sequence:  
+1. User clicks favorite again on a saved recipe.  
 2. System removes the recipe from the favorite list.
 
-14. View All Recipes
-- Pre-condition: None (publicly accessible).
-- Trigger: User visits the homepage or recipe list page.
-- Primary Sequence:
-1. User navigates to the homepage.
-2. System queries the database for all recipes.
-3. System renders the recipe list page.
-4. Each recipe is displayed with a preview (title, image, short description).
-- Primary Postconditions: All public recipes are shown to the user.
-- Alternate Sequence:
-1. No recipes exist in the database.
+13. View All Recipes  
+- Pre-condition: None (publicly accessible).  
+- Trigger: User visits the homepage or recipe list page.  
+- Primary Sequence:  
+1. User navigates to the homepage.  
+2. System queries the database for all recipes.  
+3. System renders the recipe list page.  
+4. Each recipe is displayed with a preview (title, image, short description).  
+- Primary Postconditions:  
+All public recipes are shown to the user.  
+- Alternate Sequence:  
+1. No recipes exist in the database.  
 2. Page displays “No recipes available” message.
 
-15. Filter Recipes
-- Pre-condition: User is on the recipe list page.
-- Trigger: User selects a filter tag (e.g., “vegan” or “dessert”).
-- Primary Sequence:
-1. User views the recipe list.
-2. User selects a tag from the filter dropdown or buttons.
-3. System queries recipes by the selected tag.
-4. Filtered recipes are displayed on the same page.
-- Primary Postconditions: Only recipes matching the filter are shown.
-- Alternate Sequence:
-1. No recipes match the filter.
+14. Filter Recipes  
+- Pre-condition: User is on the recipe list page.  
+- Trigger: User selects a filter tag (e.g., “vegan” or “dessert”).  
+- Primary Sequence:  
+1. User views the recipe list.  
+2. User selects a tag from the filter dropdown or buttons.  
+3. System queries recipes by the selected tag.  
+4. Filtered recipes are displayed on the same page.  
+- Primary Postconditions:  
+Only recipes matching the filter are shown.  
+- Alternate Sequence:  
+1. No recipes match the filter.  
 2. System shows a “No results found” message.
 
-
+15. Filter Recipes  
+- Pre-condition: User is on the recipe list page.  
+- Trigger: User selects a filter tag (e.g., “vegan” or “dessert”).  
+- Primary Sequence:  
+1. User views the recipe list.  
+2. User selects a tag from the filter dropdown or buttons.  
+3. System queries recipes by the selected tag.  
+4. Filtered recipes are displayed on the same page.  
+- Primary Postconditions:  
+Only recipes matching the filter are shown.  
+- Alternate Sequence:  
+1. No recipes match the filter.  
+2. System shows a “No results found” message.
 
