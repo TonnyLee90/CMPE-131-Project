@@ -22,10 +22,6 @@
 1. non-functional
 2. non-functional
 
-<each of the 14 requirements will have a use case associated with it>
-## Use Cases <Add name of who will write (this specific requirement) and implement (in subsequent milestones) the use case below>
-
-
 ## 6. Use Case: Delete Recipe  
 **impemented by:** Tonny Lee  
 **Pre-condition:** The user has logged in and the recipe's author is the current logged-in user.  
@@ -34,12 +30,88 @@
 - User selects a recipe  
 - User clicks the “Delete” button  
 - System prompts a warming to user asking if the user wants to delete the post  
-- User clicks “yes” to confirm deletion.
+- User clicks “yes” to confirm deletion.  
+
 **Primary Postconditions:**  
 - If confirmed, the recipe is deleted.
-- User can’t see the recipe on any page.  
+- User can’t see the recipe on any page.
+
 **Alternate Sequence:**  
 - System loses connection.  
 - System displays an error message: "Unable to delete recipe. Please try again later."  
-- System redirect user back to the recipe page  
+- System redirect user back to the recipe page
+
+## 7. Use Case: View Recipe    
+**impemented by:** Tonny Lee  
+**Pre-condition:** User is on the home page.  
+**Trigger:** User clicks the “View” button below a recipe.  
+**Primary Sequence:**  
+- User selects a recipe to review on the home page.  
+- System displays the details of the recipe including author, title, ingredients, instructions, and date. 
+- User views the recipe.
+
+**Primary Postconditions:**  
+- User can view and optionally copy recipe details.
+
+**Alternate Sequence:**  
+- User selects a deleted recipe
+- System prompts the user that the recipe has been deleted. Please refresh the page.
+
+## 8. Use Case: Rate Recipe  
+**impemented by:** Tonny Lee  
+**Pre-condition:** User has logged in and on the home page.  
+**Trigger:** Click “Rate” button.    
+**Primary Sequence:**  
+- Users select a recipe
+- System displays the recipe
+- User clicks “Rate” button
+- System displays a rating interface
+- User selects a star rating
+- User clicks the “Submit” button
+- System prompts that “Review has been posted.”
+
+**Primary Postconditions:**  
+- User can see their ranking
+- System shows a updating ranking result
+
+**Alternate Sequence:**  
+- User submits with 0 stars
+- System displays an error message to the user to select at least 1 star.
+
+## 9. Use Case: Search Recipe  
+**impemented by:** Tonny Lee  
+**Pre-condition:** User has logged in and on the home page.
+**Trigger:** User clicks “Search” button. 
+**Primary Sequence:**  
+- User clicks “Filter” button
+- User enters a title keyword
+- System displays all recipes that have the keyword in their title
+-	User enters ingredient keywords
+- System displays all recipes matching keywords in their title and ingredients.
+
+**Primary Postconditions:**  
+- System displays all the recipes including key words in title and ingredient.
+
+**Alternate Sequence:**  
+- User enters invalid input in search field.
+- System prompts the user to enter a valid input.  
+
+## 10. Use Case: Comment on Recipe  
+**impemented by:** Tonny Lee  
+**Pre-condition:** The user has logged in and the recipe's author is the current logged-in user.  
+**Trigger:** User clicks the “Comment” field.  
+**Primary Sequence:**  
+- User enters comment text
+- User clicks “Comment” button to submit
+- System prompts the user that “comment posted successfully!”
+
+**Primary Postconditions:**  
+- User can see their own comment under the recipe.
+
+**Alternate Sequence:**  
+- User enters too many words and exceeds the system’s word limit.
+- The system displays an error message to the user.
+- The system prompts the user to comment again.
+
+
 
