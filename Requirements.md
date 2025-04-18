@@ -20,12 +20,12 @@
 <using the syntax [](images/ui1.png) add images in a folder called images/ and place sketches of your webpages>
 
 ## Non-functional Requirements
-1. non-functional
-2. non-functional
+1. non-functional: The app should be able to run on multiple platforms, including mobile devices and major browsers.
+2. non-functional: The app should return recipe results within 3 seconds.
 
 ## 6. Use Case: Delete Recipe  
-**impemented by:** Tonny Lee  
-**Pre-condition:** The user has logged in and the recipe's author is the current logged-in user.  
+**implemented by:** Tonny Lee  
+**Pre-condition:** The user has logged in, and the recipe's author is the current logged-in user.  
 **Trigger:** The user clicks “Delete” button.  
 **Primary Sequence:**  
 - User selects a recipe  
@@ -43,12 +43,12 @@
 - System redirect user back to the recipe page
 
 ## 7. Use Case: View Recipe    
-**impemented by:** Tonny Lee  
+**implemented by:** Tonny Lee  
 **Pre-condition:** User is on the home page.  
 **Trigger:** User clicks the “View” button below a recipe.  
 **Primary Sequence:**  
 - User selects a recipe to review on the home page.  
-- System displays the details of the recipe including author, title, ingredients, instructions, and date. 
+- System displays the recipe details, including author, title, ingredients, instructions, and date. 
 - User views the recipe.
 
 **Primary Postconditions:**  
@@ -59,7 +59,7 @@
 - System prompts the user that the recipe has been deleted. Please refresh the page.
 
 ## 8. Use Case: Rate Recipe  
-**impemented by:** Tonny Lee  
+**implemented by:** Tonny Lee  
 **Pre-condition:** User has logged in and on the home page.  
 **Trigger:** Click “Rate” button.    
 **Primary Sequence:**  
@@ -80,7 +80,7 @@
 - System displays an error message to the user to select at least 1 star.
 
 ## 9. Use Case: Search Recipe  
-**impemented by:** Tonny Lee  
+**implemented by:** Tonny Lee  
 **Pre-condition:** User has logged in and on the home page.
 **Trigger:** User clicks “Search” button. 
 **Primary Sequence:**  
@@ -98,7 +98,7 @@
 - System prompts the user to enter a valid input.  
 
 ## 10. Use Case: Comment on Recipe  
-**impemented by:** Tonny Lee  
+**implemented by:** Tonny Lee  
 **Pre-condition:** The user has logged in and the recipe's author is the current logged-in user.  
 **Trigger:** User clicks the “Comment” field.  
 **Primary Sequence:**  
