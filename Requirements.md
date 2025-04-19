@@ -1,11 +1,11 @@
 ## <remove all of the example text and notes in < > such as this one>
 
-## Functional Requirements
-1. requirement <should be 1 sentence that describes requirement>
-2. requirement
-3. requirement
-4. requirement
-5. requirement
+## Functional Requirements Descriptions
+1. User Registration: Allows a visitor to create an account by providing a username, email, and password.
+2. User Login: Registered users can log in using their email and password.
+3. User Logout: Logged-in users can securely log out of their account.
+4. Create Recipe: Logged-in users can add new recipes including a title, description, ingredients, and instructions.
+5. Edit Recipe: Registered users can update recipes they previously created.
 6. Delete Recipe: This function allows logged-in users to delete their own recipes.
 7. View Recipe: This function allows any user to view detailed information about a selected recipe.
 8. Search Recipe: This function allows logged-in users to rate a recipe from 1 to 5 stars.
@@ -19,9 +19,147 @@
 
 <using the syntax [](images/ui1.png) add images in a folder called images/ and place sketches of your webpages>
 
-## Non-functional Requirements
+## Non-functional Requirements 
 1. non-functional: The app should be able to run on multiple platforms, including mobile devices and major browsers.
 2. non-functional: The app should return recipe results within 3 seconds.
+
+## Functional Requirements
+**implemented by:** Sergio Quispe 
+## 1. Use case: User Registration
+Description: A visitor can create an account by providing a username, email, and password.
+Actors:
+System
+User
+
+Prerequisite:
+The user is not registered
+The user navigates to “home/registration” endpoint
+
+Trigger:
+The user is at the Registration endpoint
+
+Primary Sequence:
+1. The website displays a registration form with the following fields: username, email and password
+2. The new user fills out all the required fields
+3. The user click the “submit” button
+4. The system validates the input
+5. The system saves the information on the database and displays a confirmation        
+
+Alternate Sequence:
+4.1 The system does not validate the form
+4.2 The system displays an error prompting the user to fill the form
+
+## 2.User case: User Login
+**implemented by:** Sergio Quispe 
+
+Description: Registered users can log in using their email and password.
+
+Actors:
+User
+System
+
+Prerequisite:
+The user is registered.
+The user's email and password are stored in the system's database.
+
+Trigger:
+The user navigates to the /home/login endpoint.
+
+Primary Sequence:
+1. The system displays a login form with email and password fields.
+2. The user enters their email and password.
+3. The user clicks the “Submit” button.
+4. The system checks that both fields have input.
+5. The system compares the provided credentials with those stored in the database.
+6. If the credentials match, the system logs the user in.
+7. The user is redirected to the /home/profile endpoint.
+
+
+Alternate Sequences:
+4.1 The form is incomplete.
+4.2 The system displays an error prompting the user to complete all fields.
+
+6.1 The email or password is incorrect.
+6.2 The system displays an error prompting the user to try again.
+
+## 3. Use Case: User Logout
+**implemented by:** Sergio Quispe 
+
+Description: Logged-in users can securely log out of their account.
+
+Actors:
+User
+System
+
+Prerequisite:
+The user is registered and logged in.
+The user is on the “home/profile” endpoint
+
+Trigger:
+The user clicks the "Logout" button.
+
+Primary Sequence:
+1. The user clicks the "Logout" button.
+2. The system ends the user's session.
+3. The system redirects the user to the homepage or login screen.
+
+## 4. Use Case: Create Recipe
+**implemented by:** Sergio Quispe 
+
+Description: Logged-in users can add new recipes including a title, description, ingredients, and instructions.
+
+Actors:
+User
+System
+
+Prerequisite:
+The user is logged in.
+
+Trigger:
+The user navigates to the /home/create-recipe endpoint.
+
+
+Primary Sequence:
+1. The system displays a form with fields for title, description, ingredients, and instructions.
+2. The user fills in the form.
+3. The user clicks the “Submit” button.
+4. The system validates the input.
+5. If valid, the system saves the recipe to the database and displays a confirmation message.
+
+
+Alternate Sequence:
+4.1 The input fails validation.
+4.2 The system displays an error prompting the user to correct or complete the form.
+
+## 5. Use Case: Edit Recipe
+**implemented by:** Sergio Quispe 
+
+Description: Registered users can update recipes they previously created.
+
+Actors:
+User
+System
+
+Prerequisites:
+The user has an account and is logged in.
+The user is on their profile page.
+
+Trigger:
+The user selects the “Edit” option for a recipe from their list.
+
+Primary Sequence:
+1. The system redirects the user to the /home/recipe/edit endpoint.
+2. The system pre-fills the form with the existing title, description, ingredients, and instructions.
+3. The user modifies the desired fields.
+4. The user clicks the “Submit” button.
+5. The system checks that all fields are filled.
+6. If valid, the system updates the recipe in the database and displays a success message.
+7. The system redirects the user back to /home/profile.
+
+
+Alternate Sequence:
+6.1 If invalid, some fields are incomplete.
+    6.1.1 The system prompts the user to fill in all required fields.
 
 ## 6. Use Case: Delete Recipe  
 **implemented by:** Tonny Lee  
