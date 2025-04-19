@@ -24,8 +24,10 @@
 2. non-functional: The app should return recipe results within 3 seconds.
 
 ## Functional Requirements
-**implemented by:** Sergio Quispe 
+
 ## 1. Use case: User Registration
+**implemented by:** Sergio Quispe 
+
 Description: A visitor can create an account by providing a username, email, and password.
 Actors:
 System
