@@ -1,4 +1,4 @@
-## Functional Requirements Descriptions
+# Functional Requirements Descriptions
 1. User Registration: Allows a visitor to create an account by providing a username, email, and password.
 2. User Login: Registered users can log in using their email and password.
 3. User Logout: Logged-in users can securely log out of their account.
@@ -15,13 +15,12 @@
 14. View All Recipes: This function allows any user to view a complete list of all available recipes on the homepage or main recipe list page.
 15. Filter Recipes: This function allows users to filter recipes based on specific tags such as 'vegan', 'dessert', or other categories.
 
-<using the syntax [](images/ui1.png) add images in a folder called images/ and place sketches of your webpages>
 
-## Non-functional Requirements 
+# Non-functional Requirements 
 1. non-functional: The app should be able to run on multiple platforms, including mobile devices and major browsers.
 2. non-functional: The app should return recipe results within 3 seconds.
 
-## Functional Requirements
+# Functional Requirements
 
 ## 1. Use case: User Registration
 **implemented by:** Sergio Quispe 
