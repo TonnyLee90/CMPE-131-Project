@@ -25,11 +25,9 @@
 
 ## 1. Use case: User Registration
 **implemented by:** Sergio Quispe 
-
+**Actors:** User, System  
 Description: A visitor can create an account by providing a username, email, and password.
-Actors:
-System
-User
+
 
 Prerequisite:
 The user is not registered
@@ -51,7 +49,7 @@ Alternate Sequence:
 
 ## 2.User case: User Login
 **implemented by:** Sergio Quispe 
-
+**Actors:** User, System  
 Description: Registered users can log in using their email and password.
 
 Actors:
@@ -83,8 +81,8 @@ Alternate Sequences:
 6.2 The system displays an error prompting the user to try again.
 
 ## 3. Use Case: User Logout
-**implemented by:** Sergio Quispe 
-
+**implemented by:** Sergio Quispe  
+**Actors:** User, System  
 Description: Logged-in users can securely log out of their account.
 
 Actors:
@@ -105,7 +103,7 @@ Primary Sequence:
 
 ## 4. Use Case: Create Recipe
 **implemented by:** Sergio Quispe 
-
+**Actors:** User, System  
 Description: Logged-in users can add new recipes including a title, description, ingredients, and instructions.
 
 Actors:
@@ -133,12 +131,9 @@ Alternate Sequence:
 
 ## 5. Use Case: Edit Recipe
 **implemented by:** Sergio Quispe 
-
+**Actors:** User, System  
 Description: Registered users can update recipes they previously created.
 
-Actors:
-User
-System
 
 Prerequisites:
 The user has an account and is logged in.
@@ -163,7 +158,8 @@ Alternate Sequence:
 
 ## 6. Use Case: Delete Recipe  
 **implemented by:** Tonny Lee  
-**Pre-condition:** The user has logged in, and the recipe's author is the current logged-in user.  
+**Actors:** User, System  
+**Pre-condition:** The user has logged in, and the recipe's author is the current logged-in user.
 **Trigger:** The user clicks “Delete” button.  
 **Primary Sequence:**  
 - User selects a recipe  
@@ -182,7 +178,8 @@ Alternate Sequence:
 
 ## 7. Use Case: View Recipe    
 **implemented by:** Tonny Lee  
-**Pre-condition:** User is on the home page.  
+**Actors:** User, System  
+**Pre-condition:** User is on the home page. 
 **Trigger:** User clicks the “View” button below a recipe.  
 **Primary Sequence:**  
 - User selects a recipe to review on the home page.  
@@ -198,7 +195,8 @@ Alternate Sequence:
 
 ## 8. Use Case: Rate Recipe  
 **implemented by:** Tonny Lee  
-**Pre-condition:** User has logged in and on the home page.  
+**Actors:** User, System  
+**Pre-condition:** User has logged in and on the home page. 
 **Trigger:** Click “Rate” button.    
 **Primary Sequence:**  
 - Users select a recipe
@@ -219,6 +217,7 @@ Alternate Sequence:
 
 ## 9. Use Case: Search Recipe  
 **implemented by:** Tonny Lee  
+**Actors:** User, System  
 **Pre-condition:** User has logged in and on the home page.
 **Trigger:** User clicks “Search” button. 
 **Primary Sequence:**  
@@ -237,6 +236,7 @@ Alternate Sequence:
 
 ## 10. Use Case: Comment on Recipe  
 **implemented by:** Tonny Lee  
+**Actors:** User, System  
 **Pre-condition:** The user has logged in and the recipe's author is the current logged-in user.  
 **Trigger:** User clicks the “Comment” field.  
 **Primary Sequence:**  
@@ -253,7 +253,8 @@ Alternate Sequence:
 - The system prompts the user to comment again.
 
 ## 11. Edit User Profile  
-**implemented by:** William Nguyen
+**implemented by:** William Nguyen  
+**Actors:** User, System  
 **Pre-condition:** User is logged in and viewing their own profile.  
 **Trigger:** User clicks “Edit Profile”.  
 **Primary Sequence:** 
@@ -274,6 +275,7 @@ Alternate Sequence:
 
 ## 12. Save Recipe (Favorites)  
 **implemented by:** William Nguyen  
+**Actors:** User, System  
 **Pre-condition:** User is logged in and viewing a recipe.  
 **Trigger:** User clicks the “Save” or “Favorite” button on a recipe.  
 **Primary Sequence:**  
@@ -292,6 +294,7 @@ Alternate Sequence:
 
 ## 13. View All Recipes  
 **implemented by:** William Nguyen  
+**Actors:** User, System  
 **Pre-condition:** None (publicly accessible).  
 **Trigger:** User visits the homepage or recipe list page.  
 **Primary Sequence:**  
@@ -309,6 +312,7 @@ Alternate Sequence:
 
 ## 14. Filter Recipes  
 **implemented by:** William Nguyen  
+**Actors:** User, System  
 **Pre-condition:** User is on the recipe list page.  
 **Trigger:** User selects a filter tag (e.g., “vegan” or “dessert”).  
 **Primary Sequence:**  
@@ -326,6 +330,7 @@ Alternate Sequence:
 
 ## 15. Filter Recipes  
 **implemented by:** William Nguyen  
+**Actors:** User, System  
 **Pre-condition:** User is on the recipe list page.  
 **Trigger:** User selects a filter tag (e.g., “vegan” or “dessert”).  
 **Primary Sequence:**  
