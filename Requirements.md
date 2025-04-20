@@ -1,5 +1,3 @@
-## <remove all of the example text and notes in < > such as this one>
-
 ## Functional Requirements Descriptions
 1. User Registration: Allows a visitor to create an account by providing a username, email, and password.
 2. User Login: Registered users can log in using their email and password.
