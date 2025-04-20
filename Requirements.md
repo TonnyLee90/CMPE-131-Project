@@ -275,7 +275,7 @@ Alternate Sequence:
 - System displays error and does not update the profile.
 
 ## 12. Save Recipe (Favorites)  
-**implemented by:** William Nguyen
+**implemented by:** William Nguyen  
 **Pre-condition:** User is logged in and viewing a recipe.  
 **Trigger:** User clicks the “Save” or “Favorite” button on a recipe.  
 **Primary Sequence:**  
@@ -283,45 +283,34 @@ Alternate Sequence:
 - User clicks the “Favorite” button.  
 - System checks if recipe is already favorited.  
 - If not, system creates a favorite entry in the database.  
-- UI updates to show recipe is saved (e.g., filled heart icon).  
+- UI updates to show recipe is saved (e.g., filled heart icon).
+  
 **Primary Postconditions:**  
-Recipe is added to the user's list of favorites.  
+- Recipe is added to the user's list of favorites. 
+
 **Alternate Sequence:** 
 - User clicks favorite again on a saved recipe.  
 - System removes the recipe from the favorite list.
 
 ## 13. View All Recipes  
-**implemented by:** William Nguyen
+**implemented by:** William Nguyen  
 **Pre-condition:** None (publicly accessible).  
 **Trigger:** User visits the homepage or recipe list page.  
 **Primary Sequence:**  
 - User navigates to the homepage.  
 - System queries the database for all recipes.  
 - System renders the recipe list page.  
-- Each recipe is displayed with a preview (title, image, short description).  
+- Each recipe is displayed with a preview (title, image, short description).
+
 **Primary Postconditions:**  
-All public recipes are shown to the user.  
+- All public recipes are shown to the user.  
+
 **Alternate Sequence:**  
 - No recipes exist in the database.  
 - Page displays “No recipes available” message.
 
 ## 14. Filter Recipes  
-**implemented by:** William Nguyen
-**Pre-condition:** User is on the recipe list page.  
-**Trigger:** User selects a filter tag (e.g., “vegan” or “dessert”).  
-**Primary Sequence:**  
-- User views the recipe list.  
-- User selects a tag from the filter dropdown or buttons.  
-- System queries recipes by the selected tag.  
-- Filtered recipes are displayed on the same page.  
-**Primary Postconditions:**  
-- Only recipes matching the filter are shown.  
-**Alternate Sequence:**  
-- No recipes match the filter.  
-- System shows a “No results found” message.
-
-## 15. Filter Recipes  
-**implemented by:** William Nguyen
+**implemented by:** William Nguyen  
 **Pre-condition:** User is on the recipe list page.  
 **Trigger:** User selects a filter tag (e.g., “vegan” or “dessert”).  
 **Primary Sequence:**  
@@ -331,7 +320,24 @@ All public recipes are shown to the user.
 - Filtered recipes are displayed on the same page.
 
 **Primary Postconditions:**  
--Only recipes matching the filter are shown.
+- Only recipes matching the filter are shown.
+  
+**Alternate Sequence:**  
+- No recipes match the filter.  
+- System shows a “No results found” message.
+
+## 15. Filter Recipes  
+**implemented by:** William Nguyen  
+**Pre-condition:** User is on the recipe list page.  
+**Trigger:** User selects a filter tag (e.g., “vegan” or “dessert”).  
+**Primary Sequence:**  
+- User views the recipe list.  
+- User selects a tag from the filter dropdown or buttons.  
+- System queries recipes by the selected tag.  
+- Filtered recipes are displayed on the same page.
+
+**Primary Postconditions:**  
+- Only recipes matching the filter are shown.
  
 **Alternate Sequence:**  
 - No recipes match the filter.  
