@@ -25,135 +25,95 @@
 ## 1. Use case: User Registration
 **implemented by:** Sergio Quispe 
 **Actors:** User, System  
-Description: A visitor can create an account by providing a username, email, and password.
+**Pre-condition:** The user is not registered, the user navigates to “home/registration” endpoint
+**Trigger:** The user is at the Registration endpoint
 
+**Primary Sequence:**  
+- The website displays a registration form with the following fields: username, email and password
+- The new user fills out all the required fields
+- The user click the “submit” button
+- The system validates the content of the fields 
+- The system saves the information on the database  
 
-Prerequisite:
-The user is not registered
-The user navigates to “home/registration” endpoint
+**Primary Postconditions:**  
+- The system displays a confirmation, the user is redirected to /home/profile endpoint.     
 
-Trigger:
-The user is at the Registration endpoint
-
-Primary Sequence:
-1. The website displays a registration form with the following fields: username, email and password
-2. The new user fills out all the required fields
-3. The user click the “submit” button
-4. The system validates the input
-5. The system saves the information on the database and displays a confirmation        
-
-Alternate Sequence:
-4.1 The system does not validate the form
-4.2 The system displays an error prompting the user to fill the form
+**Alternate Sequence:**  
+- The system does not validate the content on the fields 
+- The system displays an error prompting the user to complete the form fields
 
 ## 2.User case: User Login
 **implemented by:** Sergio Quispe 
 **Actors:** User, System  
-Description: Registered users can log in using their email and password.
+**Pre-condition:** The user is registered. The user's email and password are stored in the system's database.
+**Trigger:** The user navigates to the /home/login endpoint.
 
-Actors:
-User
-System
+**Primary Sequence:**  
+- The system displays a login form with email and password fields.
+- The user enters their email and password.
+- The user clicks the “Submit” button.
+- The system checks that both fields have input.
+- The system compares the provided credentials with those stored in the database.
+- If the credentials match, the system logs the user in.
 
-Prerequisite:
-The user is registered.
-The user's email and password are stored in the system's database.
+**Primary Postconditions:**  
+- The user is redirected to the /home/profile endpoint.
 
-Trigger:
-The user navigates to the /home/login endpoint.
-
-Primary Sequence:
-1. The system displays a login form with email and password fields.
-2. The user enters their email and password.
-3. The user clicks the “Submit” button.
-4. The system checks that both fields have input.
-5. The system compares the provided credentials with those stored in the database.
-6. If the credentials match, the system logs the user in.
-7. The user is redirected to the /home/profile endpoint.
-
-
-Alternate Sequences:
-4.1 The form is incomplete.
-4.2 The system displays an error prompting the user to complete all fields.
-
-6.1 The email or password is incorrect.
-6.2 The system displays an error prompting the user to try again.
+**Alternate Sequence:**  
+- If the form is incomplete, the system displays an error prompting the user to complete all fields.
+- The email or password is incorrect.
+- The system displays an error prompting the user to try again.
 
 ## 3. Use Case: User Logout
 **implemented by:** Sergio Quispe  
 **Actors:** User, System  
-Description: Logged-in users can securely log out of their account.
+**Pre-condition:** The user is registered and logged in. The user is on the “home/profile” endpoint
+**Trigger:** The user clicks the "Logout" button.
 
-Actors:
-User
-System
-
-Prerequisite:
-The user is registered and logged in.
-The user is on the “home/profile” endpoint
-
-Trigger:
-The user clicks the "Logout" button.
-
-Primary Sequence:
-1. The user clicks the "Logout" button.
-2. The system ends the user's session.
-3. The system redirects the user to the homepage or login screen.
+**Primary Sequence:**  
+- The user clicks the "Logout" button.
+- The system ends the user's session.
+- The system redirects the user to the homepage or login screen.
 
 ## 4. Use Case: Create Recipe
 **implemented by:** Sergio Quispe 
 **Actors:** User, System  
-Description: Logged-in users can add new recipes including a title, description, ingredients, and instructions.
+**Pre-condition:** The user has an account and is logged in
+**Actors:** User,System
+**Trigger:** The user navigates to the /home/create-recipe endpoint.
 
-Actors:
-User
-System
+**Primary Sequence:**  
+- The system displays a form with fields for title, description, ingredients, and instructions.
+- The user fills in the form.
+- The user clicks the “Submit” button.
+- The system validates the input.
 
-Prerequisite:
-The user is logged in.
+**Primary Postconditions:**  
+- If valid, the system saves the recipe to the database and displays a confirmation message.
 
-Trigger:
-The user navigates to the /home/create-recipe endpoint.
-
-
-Primary Sequence:
-1. The system displays a form with fields for title, description, ingredients, and instructions.
-2. The user fills in the form.
-3. The user clicks the “Submit” button.
-4. The system validates the input.
-5. If valid, the system saves the recipe to the database and displays a confirmation message.
-
-
-Alternate Sequence:
-4.1 The input fails validation.
-4.2 The system displays an error prompting the user to correct or complete the form.
+**Alternate Sequence:**  
+- The input fails validation.
+- The system displays an error prompting the user to correct or complete the form.
 
 ## 5. Use Case: Edit Recipe
 **implemented by:** Sergio Quispe 
-**Actors:** User, System  
-Description: Registered users can update recipes they previously created.
+**Actors:** User, System 
+**Pre-condition:** The user has an account and is logged in, the user is on their profile page. 
+**Trigger:** The user selects the “Edit” option for a recipe from their list.
 
+**Primary Sequence:**  
+- The system redirects the user to the /home/recipe/edit endpoint.
+- The system pre-fills the form with the existing title, description, ingredients, and instructions.
+- The user modifies the desired fields.
+- The user clicks the “Submit” button.
+- The system checks that all fields are filled.
+**Primary Postconditions:**  
+- If valid, the system updates the recipe in the database and displays a success message.
+- The system redirects the user back to /home/profile.
 
-Prerequisites:
-The user has an account and is logged in.
-The user is on their profile page.
-
-Trigger:
-The user selects the “Edit” option for a recipe from their list.
-
-Primary Sequence:
-1. The system redirects the user to the /home/recipe/edit endpoint.
-2. The system pre-fills the form with the existing title, description, ingredients, and instructions.
-3. The user modifies the desired fields.
-4. The user clicks the “Submit” button.
-5. The system checks that all fields are filled.
-6. If valid, the system updates the recipe in the database and displays a success message.
-7. The system redirects the user back to /home/profile.
-
-
-Alternate Sequence:
-6.1 If invalid, some fields are incomplete.
-    6.1.1 The system prompts the user to fill in all required fields.
+**Alternate Sequence:**  
+- If invalid, some fields are incomplete.
+- The system prompts the user to fill in all required fields.
 
 ## 6. Use Case: Delete Recipe  
 **implemented by:** Tonny Lee  
