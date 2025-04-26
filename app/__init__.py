@@ -1,17 +1,21 @@
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
-<<<<<<< HEAD
-=======
+
+from flask_login import LoginManager
+
+
+# set up db location
+login=LoginManager()
+login.init_app(myapp)
+
+from models import User
+@login.user_loader
+def load_user(user_id):
+    return User.query.get(int(user_id))
 
 myapp = Flask(__name__)
 # set up db location
 myapp.config['SQLALCHEMY_DATABASE_URI']='sqlite:///app.db'
-db = SQLAlchemy(myapp)
-from app import routes
->>>>>>> 97bd1ac1395a7e4f69b6d12be8c8aee7d3f52400
-
-myapp = Flask(__name__)
-# set up db location
-myapp.config['SQLALCHEMY_DATABASE_URI']='sqlite:///app.db'
+myapp.config['SECRET_KEY'] = 'ULTRA-SECRET-DONT-SHARE'
 db = SQLAlchemy(myapp)
 from app import routes

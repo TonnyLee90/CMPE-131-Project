@@ -1,7 +1,12 @@
+
 from app import myapp, db, bcrypt
-from app.forms import LoginForm
+from models import User,Recipe
+from app.forms import Registration,LoginForm
+from flask import render_template,redirect,url_for,flash
+from werkzeug.security import generate_password_hash
+from flask_login import login_required
 from app.models import User
-from flask import render_template, redirect, url_for, flash
+
 
 @myapp.route('/')
 def home():
@@ -11,6 +16,22 @@ def home():
 def test():
     return "test123"
 
+@myapp.route("/registration",methods=['GET','POST'])
+def register():
+    form = Registration()
+    if form.validate_on_submit():
+        new_user = User(username=form.username.data, password=generate_password_hash(form.password.data))
+        db.session.add(new_user)
+        db.session.commit()
+        flash('successful', 'success')
+        return redirect(url_for('home'))
+    return render_template('registration.html', form=form)
+
+@myapp.route("/home/recipe")
+@login_required
+def view_recipe():
+    recipes = Recipe.query.all()
+    return render_template("recipe.html", recipes=recipes)
 # log in
 @myapp.route('/login', methods=['GET', 'POST'])
 def login():
@@ -26,3 +47,4 @@ def login():
         else:
             flash('Login Unsuccessful! Please check your email and password.', 'danger')
     return render_template('login.html', title='Login', form=form)
+
