@@ -18,9 +18,8 @@ A recipe-sharing web application built with the Python Flask framework for backe
 ## 🛠️Setup <Installation Instructions>
 ### Prerequisites (Make sure the following are installed:)
 - python 3  
-To check if Python is install, run this command in the terminal.
 ```bash
-python --version
+python --version // To check if Python is install, run this command in the terminal.
 ```
 - Git
 ```bash
@@ -39,29 +38,34 @@ git clone https://github.com/CMPE-131-Project
 On Linux
 ```bash
 cd pathToProject
-python -m venv/bin/activate
+python -m venv venv
 Source venv/bin/activate
 ```
 On window
 ```bash
+venv\Scripts\activate
 ```
 3. Install all dependencies
 ```bash
 pip install -r requirements.txt
 ```
-4. Set up the database
-5. Run the App
+4. Set up the database in the terminal
+```python
+from app import db, myapp
+myapp.app_context().push()
+db.create_all()
+```
+6. Run the App
 ```bash
 python run.py
 ```
 ## Technologies
 - **Python** - Programmming language  
 - **flask** - Web framwork  
-- **HTML/ CSS** - Frontednd design  
+- **flask-sqlalchemy** - Database Management  
 - **Flask-Login** - User session management
-
+- **HTML/ CSS** - Frontednd design 
 ## Ethical Implications
-### Ethical Implications
 
 When building our food recipe web application, we have a professional responsibility to ensure that the platform is secure, accessible, and promotes a positive user experience. Protecting user data, particularly account information and personal preferences, is critical to maintaining user trust. We must follow ethical coding practices by preventing vulnerabilities such as SQL injection or insecure password storage through the proper use of libraries like Flask-Login and SQLAlchemy.
 
@@ -73,5 +77,3 @@ Overall, our engineering decisions must balance functionality, security, inclusi
 
 ## Dependencies <list all the Python packages that the app needs to run>
 All required Python packages are listed in `requirements.txt`
-
-Sergio Test
