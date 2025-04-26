@@ -29,21 +29,21 @@
 **Trigger:** The user is at the Registration endpoint
 
 **Primary Sequence:**  
-- The website displays a registration form with the following fields: username, email and password
+- The website displays a registration form with the following fields: username and password
 - The new user fills out all the required fields
 - The user click the “submit” button
 - The system validates the content of the fields 
 - The system saves the information on the database  
 
 **Primary Postconditions:**  
-- The system displays a confirmation, the user is redirected to /home/profile endpoint.     
+- The system displays a confirmation, the user is redirected to /home endpoint.     
 
 **Alternate Sequence:**  
 - The system does not validate the content on the fields 
 - The system displays an error prompting the user to complete the form fields
 
 ## 2.User case: User Login
-**implemented by:** Sergio Quispe 
+**implemented by:** Tony Lee
 **Actors:** User, System  
 **Pre-condition:** The user is registered. The user's email and password are stored in the system's database.
 **Trigger:** The user navigates to the /home/login endpoint.
@@ -136,7 +136,7 @@
 - System redirect user back to the recipe page
 
 ## 7. Use Case: View Recipe    
-**implemented by:** Tonny Lee  
+**implemented by:** Sergio Quispe
 **Actors:** User, System  
 **Pre-condition:** User is on the home page. 
 **Trigger:** User clicks the “View” button below a recipe.  
