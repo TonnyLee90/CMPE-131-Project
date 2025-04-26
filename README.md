@@ -2,7 +2,7 @@
 A recipe-sharing web application built with the Python Flask framework for backend logic, SQLAlchemy for database management, and HTML/ CSS for the frontend interface.
 
 ## Table of contents
-* [Contributors](#general-info)
+* [Contributors](#Contributors)
 * [Technologies](#technologies)
 * [Setup](#setup)
 
@@ -19,7 +19,7 @@ A recipe-sharing web application built with the Python Flask framework for backe
 ### Prerequisites (Make sure the following are installed:)
 - python 3  
 ```bash
-python --version // To check if Python is install, run this command in the terminal.
+python --version ## To check if Python is install, run this command in the terminal.
 ```
 - Git
 ```bash
