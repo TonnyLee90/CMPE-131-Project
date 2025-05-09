@@ -19,7 +19,7 @@
 # Non-functional Requirements 
 1. non-functional: The app should be able to run on multiple platforms, including mobile devices and major browsers.
 2. non-functional: The app should return recipe results within 3 seconds.
-
+3. non-functional: The app shall securely store users' passwords using cryptographic hashing functions.
 # Functional Requirements
 
 ## 1. Use case: User Registration
