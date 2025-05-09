@@ -54,7 +54,7 @@ cd pathToProject
 python -m venv venv
 
 # On Linux
-Source venv/bin/activate
+source venv/bin/activate
 
 # On window
 venv\Scripts\activate
