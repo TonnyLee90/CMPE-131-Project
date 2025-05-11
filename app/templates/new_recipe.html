@@ -1,0 +1,33 @@
+{% extends "layout2.html" %}
+{% block content %}
+<div class="recipe-card shadow-sm p-4 position-relative bg-light rounded mb-4">
+  <form method="POST" action="{{ url_for('new_recipe') }}">
+    {{ form.hidden_tag() }}
+
+    <div class="mb-3">
+      {{ form.title.label(class="form-label fw-bold") }}
+      {{ form.title(class="form-control") }}
+    </div>
+
+    <div class="mb-3">
+      {{ form.description.label(class="form-label fw-bold") }}
+      {{ form.description(class="form-control", rows="3") }}
+    </div>
+
+    <div class="mb-3">
+      {{ form.ingredients.label(class="form-label fw-bold") }}
+      {{ form.ingredients(class="form-control", rows="3") }}
+    </div>
+
+    <div class="mb-3">
+      {{ form.instructions.label(class="form-label fw-bold") }}
+      {{ form.instructions(class="form-control", rows="3") }}
+    </div>
+
+    <div class="text-end">
+      {{ form.submit(class="btn btn-primary") }}
+    </div>
+  </form>
+</div>
+
+{% endblock content%}

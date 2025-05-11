@@ -1,0 +1,60 @@
+{% extends "layout2.html" %}
+{% block content %}
+<div class="recipe-card shadow-sm p-4 position-relative bg-light rounded mb-4">
+  <!--recipe title-->
+  <h1 class="card-title mb-1">{{ recipe.title }}</h1>
+  
+  <!--created time and author-->
+  <p class="text-muted mb-2">By <strong>{{ recipe.author.username }}</strong> • {{ recipe.created.strftime('%B %d, %Y') }}</p>
+  <div class="d-flex gap-2 mb-3">
+    <button class="btn btn-outline-primary btn-sm">💾 Save</button>
+    <button class="btn btn-outline-warning btn-sm">⭐ Rate</button>
+    {% if current_user.id == recipe.author.id %}
+      <a href="#" class="btn btn-outline-primary">
+        <i class="bi bi-pencil-square"></i> Edit
+      </a>
+    {% endif %}
+  </div>
+  <hr>
+  <!--Rankings-->
+  <h4>Ranking</h4>
+  <p>4.6 / 5</p>
+  <hr>
+
+  <!-- Description -->
+  <h4>Description</h4>
+  <p>{{ recipe.description }}</p>
+  <hr>
+
+  <!-- Ingredients -->
+  <h4>Ingredients</h4>
+  <p>{{ recipe.ingredients }}</p>
+  <hr>
+
+  <!-- Instructions -->
+  <h4>Instructions</h4>
+  <p>{{ recipe.instructions }}</p>
+  <hr>
+
+  <!--Show All the Comments -->
+  <h4>Comments</h4>
+  {% for comment in recipe.comments %}
+    <div class="mb-3">
+      <strong>{{ comment.user.username }}: </strong> <span>{{ comment.content }}</span>
+    </div>
+  {% else %}
+    <p>No comments yet!!!</p>
+  {% endfor %}
+
+  <!--write a comment-->
+  <form method="POST">
+    {{ form.hidden_tag() }}
+
+    <div class="mb-3">
+      {{ form.content.label(class="form-label") }}
+      {{ form.content(class="form-control", placeholder="Write your comment...", rows=2) }}
+    </div>
+      {{ form.submit(class="btn btn-primary") }}
+  </form>
+</div>
+{% endblock content%}

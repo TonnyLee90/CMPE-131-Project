@@ -1,0 +1,11 @@
+{% extends "layout.html" %}
+<h1>RatingPage</h1>
+<h2>Rate Recipe: {{ recipe.title }}</h2>
+<form method="POST">
+    {{ form.hidden_tag() }}
+    {{ form.stars.label }}<br>
+    {{ form.stars(size=5) }}<br><br>
+    {{ form.submit() }}
+</form>
+{% block content %}
+{% endblock content%}

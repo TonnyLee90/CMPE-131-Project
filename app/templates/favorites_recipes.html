@@ -1,0 +1,36 @@
+{% extends "layout2.html" %}
+{% block content %}
+<h1>My Favorite Recipes</h1>
+<hr>
+
+{% if recipes %} <!--if user has saved any recipes-->
+    {% for recipe in recipes %} <!--using for loop here to print out all the recipes in the db-->
+        <div class="recipe-card shadow-sm p-4 position-relative bg-light rounded mb-4">
+          <div class="d-flex justify-content-between align-items-start">
+            <div>
+              <a href="{{ url_for('recipe', recipe_id=recipe.id) }}" class="text-decoration-none text-dark">
+                  <h3 class="fw-bold mb-2">{{ recipe.title }}</h3>
+              </a>
+              <h5 class="fw-semibold mb-3">Description</h5>
+            </div>
+            <small class="text-muted text-end">{{ recipe.author.username }}<br>{{ recipe.created.strftime('%m/%d/%Y') }}</small>
+          </div>
+          
+          <!--Description-->
+          <p class="text-muted small mb-5">
+            {{ recipe.description }}
+          </p>
+
+          <!-- Buttons -->
+          <div class="position-absolute bottom-0 end-0 m-3 d-flex gap-2">
+            <!--NEED ADD ACTION!!!!!-->
+            <a href="#" class="btn btn-outline-primary">
+              <i class="bi bi-pencil-square"></i> Edit
+            </a>
+          </div>
+        </div>
+    {% endfor %}
+{% else %}
+    <p>You haven't saved any recipes yet!!!</p>
+{% endif %}
+{% endblock content%}
