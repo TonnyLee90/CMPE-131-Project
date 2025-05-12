@@ -43,7 +43,8 @@ class Recipe(db.Model):
     ingredients = db.Column(db.Text, nullable=False)
     instructions = db.Column(db.Text, nullable=False)
     created = db.Column(db.DateTime, default=datetime.utcnow)
-    #picture
+    # for filter
+    tags = db.Column(db.String(100))
 
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
 
@@ -58,10 +59,9 @@ class Recipe(db.Model):
         # check if there's any existing rating
         if not self.ratings: # if 0 rating
             return None
-        else:
-            for rating in self.ratings:
-                toatal_ratings += rating
-            return (toatal_ratings/len(self.ratings))
+        for rating in self.ratings:
+            toatal_ratings += rating.stars
+        return round((toatal_ratings/len(self.ratings)), 1)
         
     def __repr__(self):
         return f"Recipe('{self.title}', '{self.created}')"

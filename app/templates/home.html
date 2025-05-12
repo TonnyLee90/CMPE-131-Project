@@ -1,6 +1,7 @@
 {% extends "layout2.html" %}
 {% block content %}
-
+<h1>Home Page</h1>
+<hr>
 <!--using for loop here to print out all the recipes in the db-->
 {% for recipe in recipes %}
 <!-- card content -->
@@ -14,6 +15,8 @@
     </div>
     <small class="text-muted text-end">{{ recipe.author.username }}<br>{{ recipe.created.strftime('%m/%d/%Y') }}</small>
   </div>
+  <!--tag-->
+  {{ recipe.tags }}
   <!--Description-->
   <p class="text-muted small mb-5">
     {{ recipe.description }}
@@ -21,47 +24,21 @@
 
     <!-- Buttons -->
   <div class="position-absolute bottom-0 end-0 m-3 d-flex gap-2">
-    <!--NEED ADD ACTION!!!!!-->
-    <a href="#" class="btn btn-sm btn-outline-secondary position-relative" title="Comment">
-        <i class="bi bi-chat-dots"></i>
-    </a>
-
-    <!--bookmark-->
-    <!--NEED ADD ACTION!!!put in urlfor!!url_for('save_recipe', recipe_id=recipe.id) -->
-    <form method="POST" action="#">
+    <!--save and unsaved button-->
+    <form method="POST" action="{{ url_for('save_recipe', recipe_id=recipe.id) }}">
       {{ bookmark_form.hidden_tag() }}
-      <button type="submit" class="btn btn-sm btn-outline-secondary" title="Save or Unsave">
-        <i class="bi {% if recipe in current_user.favorites %}bi-bookmark-fill{% else %}bi-bookmark{% endif %}"></i>
-      </button>
+      {% if recipe in current_user.favorites %} <!--if the recipe in already in the favorites-->
+        <!--display unsaved button-->
+        <button type="submit" class="btn btn-sm btn-outline-danger" title="Unsave">
+          <i class="bi bi-bookmark-fill"></i> Unsave
+        </button>
+      {% else %}
+        <button type="submit" class="btn btn-sm btn-outline-primary" title="Save">
+          <i class="bi bi-bookmark"></i> Save
+        </button>
+      {% endif %}
     </form>
-
   </div>
 </div>
 {% endfor %}
-<!--second-->
-<div class="recipe-card shadow-sm p-4 position-relative bg-light rounded">
-    <a href="###" class="stretched-link text-decoration-none text-dark">
-        <div class="d-flex justify-content-between align-items-start">
-        <div>
-            <h3 class="fw-bold mb-2">recipe name</h3>
-            <h5 class="fw-semibold mb-3">description</h5>
-        </div>
-        <small class="text-muted text-end">By username<br>5/9/2025</small>
-        </div>
-        <p class="text-muted small mb-5">
-        his is a long description that wraps correctly and stays inside the card lacorrectly and stays inside the card layout without overflow.correctly and stays inside the card layout without overflow.correctly and stays inside the card layout without overflow.correctly and stays inside the card layout without overflow.correctly and stays inside the card layout without overflow.correctly and stays inside the card layout without overflow.correctly and stays inside the card layout without overflow.correctly and stays inside the card layout without overflow.correctly and stays inside the card layout without overflow.correctly and stays inside the card layout without overflow.yout without overflow.
-        </p>
-    </a>
-
-    <!-- Buttons -->
-    <div class="position-absolute bottom-0 end-0 m-3 d-flex gap-2">
-    <button class="btn btn-sm btn-outline-secondary position-relative" title="Comment">
-        <i class="bi bi-chat-dots"></i>
-    </button>
-    <button class="btn btn-sm btn-outline-secondary position-relative" title="Save">
-        <i class="bi bi-bookmark"></i>
-    </button>
-    </div>
-</div>
-
 {% endblock content%}

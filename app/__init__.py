@@ -3,7 +3,7 @@ from flask_bcrypt import Bcrypt
 from flask_sqlalchemy import SQLAlchemy
 from flask_wtf import CSRFProtect
 from flask_login import LoginManager
-from app.forms import LoginForm, RegistrationForm
+from app.forms import LoginForm, RegistrationForm, SearchForm
 myapp = Flask(__name__)
 # set up db location
 myapp.config['SQLALCHEMY_DATABASE_URI']='sqlite:///app.db'
@@ -25,6 +25,7 @@ login_manager.login_view = 'login'
 def inject_forms():
     return {
         'login_form': LoginForm(),
-        'registration_form': RegistrationForm()
+        'registration_form': RegistrationForm(),
+        'search_form': SearchForm()
     }
 from app import routes

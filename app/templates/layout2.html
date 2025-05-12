@@ -10,16 +10,6 @@
 </head>
 
 <body>
-<!--flash msg-->
-{% with messages = get_flashed_messages(with_categories=true) %}
-  {% if messages %}
-    <div>
-      {% for category, message in messages %}
-        <div class="{{ category }}">{{ message }}</div>
-      {% endfor %}
-    </div>
-  {% endif %}
-{% endwith %}
 <!-- Navbar -->
 <!-- px py: horizontal and vertical padding
      me mb mt: right, bottom, and top margin
@@ -29,22 +19,32 @@
     
     <!-- Logo -->
     <div class="d-flex align-items-center">
-      <img src="{{ url_for('static', filename='images/.png')}}" alt="Logo" width="40" height="40" class="me-2">
-      <span class="navbar-brand mb-0 h4">FunRecipe</span>
+      <a href="{{url_for('home')}}" class="btn">
+        <img src="{{ url_for('static', filename='images/logo.png')}}" alt="Logo" width="40" height="40" class="me-2">
+      </a>
+      <a href="{{url_for('home')}}" class="btn">
+        <span class="navbar-brand mb-0 h4">FunRecipe</span>
+      </a>
     </div>
     
     <!-- Filter and Search -->
-    <div class="d-flex align-items-center">
-      <!--search field-->
-      <div class="position-relative w-85">
-        <i class="bi bi-search position-absolute top-50 start-0 translate-middle-y ps-3 text-muted"></i>
-        <input class="form-control rounded-pill ps-5" type="search" placeholder="Search...">
+    <form method="POST" action="{{ url_for('search') }}">
+      {{ search_form.hidden_tag() }}
+      <div class="d-flex align-items-center gap-2">
+        <!--search field-->
+        <div class="position-relative w-85">
+          <i class="bi bi-search position-absolute top-50 start-0 translate-middle-y ps-3 text-muted"></i>
+          {{ search_form.keyword(class="form-control rounded-pill ps-5", placeholder="Search recipes...") }}
+        </div>
+        <!-- Tag Filter Dropdown -->
+        <div class="position-relative">
+          <i class="bi bi-tags position-absolute top-50 start-0 translate-middle-y ps-3 text-muted"></i>
+          {{ search_form.tag(class="form-select rounded-pill ps-5") }}
+        </div>
+
+        {{ search_form.submit(class="btn btn-outline-primary")}}
       </div>
-      <!--filter button-->
-      <button class="btn me-2">
-        <i class="bi bi-funnel"></i>
-      </button>
-    </div>
+    </form>
     
     <!-- Buttons -->
     <div class="d-flex align-items-center gap-3">
@@ -65,6 +65,20 @@
     </div>
   </div>
 </nav>
+
+<!--flash msg-->
+{% with messages = get_flashed_messages(with_categories=true) %}
+  {% if messages %}
+    <div class="container mt-3">
+      {% for category, message in messages %}
+        <div class="alert alert-{{ category }} alert-dismissible fade show" role="alert">
+          {{ message }}
+          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+      {% endfor %}
+    </div>
+  {% endif %}
+{% endwith %}
 
 <!--main -->
 <div class="container-fluid mt-4">

@@ -7,18 +7,43 @@
   <!--created time and author-->
   <p class="text-muted mb-2">By <strong>{{ recipe.author.username }}</strong> • {{ recipe.created.strftime('%B %d, %Y') }}</p>
   <div class="d-flex gap-2 mb-3">
-    <button class="btn btn-outline-primary btn-sm">💾 Save</button>
-    <button class="btn btn-outline-warning btn-sm">⭐ Rate</button>
+
+    <!--rating-->
+    <form method="POST" action="{{ url_for('rate_recipe', recipe_id=recipe.id) }}" class="d-flex align-items-center gap-2">
+      {{ rating_form.hidden_tag() }}
+
+      <div class="d-flex align-items-center">
+        {% for value, label in rating_form.stars.choices %}
+          <label class="me-1">
+            <input type="radio" name="stars" value="{{ value }}" class="form-check-input">
+            <span>{{ label }}</span>
+          </label>
+        {% endfor %}
+      </div>
+
+      <!-- Submit Button -->
+      <button type="submit" class="btn btn-outline-warning btn-sm">
+        ⭐ Rate
+      </button>
+    </form>
+    
     {% if current_user.id == recipe.author.id %}
-      <a href="#" class="btn btn-outline-primary">
+      <a href="{{ url_for('edit_recipe', recipe_id=recipe.id) }}" class="btn btn-outline-secondary">
         <i class="bi bi-pencil-square"></i> Edit
       </a>
     {% endif %}
   </div>
   <hr>
-  <!--Rankings-->
-  <h4>Ranking</h4>
-  <p>4.6 / 5</p>
+
+  <!--show average rating-->
+  <div class="mb-3">
+    <strong>Average Rating:</strong>
+    {% if recipe.average_rating() %}
+      {{ recipe.average_rating() }} / 5 ⭐
+    {% else %}
+      Not rated yet.
+    {% endif %}
+  </div>
   <hr>
 
   <!-- Description -->
