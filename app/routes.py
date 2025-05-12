@@ -195,13 +195,13 @@ def search():
 
 # 10. Common a recipe, code is in reciple route (Tonny)
 
-# 11. view User profile (William)
+# 11-0. view User profile (William)
 @myapp.route('/profile')
 @login_required
 def profile():
     return render_template('profile.html', user=current_user)
 
-# 12. Edit User profile (Tonny, William)
+# 11. Edit User profile (Tonny, William)
 @myapp.route('/edit-profile', methods=['GET', 'POST'])
 @login_required
 def edit_profile():
@@ -221,7 +221,7 @@ def edit_profile():
 
     return render_template('edit_profile.html', form=form)
 
-# 13. Save or Unsave Recipe (Favorites) # Tonny
+# 12. Save or Unsave Recipe in Favorites (Tonny)
 @myapp.route('/recipes/<int:recipe_id>/save', methods=['POST'])
 @login_required
 def save_recipe(recipe_id):
@@ -239,18 +239,18 @@ def save_recipe(recipe_id):
     db.session.commit()
     return redirect(request.referrer or url_for('home'))
 
-# 14. View all recipes,  code is in route for the home page (Tonny)
+# 13. View all recipes,  code is in route for the home page (Tonny)
 
-# 15. Filter Recipes, code is in the search route (Tonny and William)
+# 14. Filter Recipes, code is in the search route (Tonny and William)
 
-# 16. View all recipes posted by current user (Tonny)
+# 15. View all recipes posted by current user (Tonny)
 @myapp.route('/my-recipes')
 @login_required
 def my_recipes():
     recipes = Recipe.query.filter_by(author=current_user).all()
     return render_template('my_recipes.html', recipes=recipes)
 
-# 17. View all saved recipes (Tonny)
+# 16. View all saved recipes (Tonny)
 @myapp.route('/favorites')
 @login_required
 def view_saved_recipes():
