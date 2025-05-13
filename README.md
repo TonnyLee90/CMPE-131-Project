@@ -1,5 +1,6 @@
 # FunRecipe - recipe app
 A recipe-sharing web application built with the Python Flask framework for backend logic, SQLAlchemy for database management, and HTML/ CSS for the frontend interface.
+![](app/static/images/home.png)
 
 ## Table of contents
 * [Contributors](#Contributors)
