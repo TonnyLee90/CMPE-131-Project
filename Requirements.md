@@ -14,11 +14,16 @@
 13. Save Recipe (Favorites): This function allows logged-in users to save or "favorite" recipes to easily access them later.
 14. View All Recipes: This function allows any user to view a complete list of all available recipes on the homepage or main recipe list page.
 15. Filter Recipes: This function allows users to filter recipes based on specific tags such as 'vegan', 'dessert', or other categories.
-
+---------------
+## Extra Functional Requirements Descriptions
+16. View My Recipes: This function allows the user to view a complete list of their own recipes.
+17. View all saved recipes: This function allows the user to view a complete list of the saved recipes.
+18. Copy link: This function allows the user to copy the link of the recipe.
 
 # Non-functional Requirements 
 1. non-functional: The app should be able to run on multiple platforms, including mobile devices and major browsers.
 2. non-functional: The app should return recipe results within 3 seconds.
+3. non-functional: The app should secure and encode the users' password by Bcrypt Hashing
 
 # Functional Requirements
 
