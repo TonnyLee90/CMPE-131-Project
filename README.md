@@ -65,6 +65,7 @@ venv\Scripts\activate
 pip install -r requirements.txt
 ```
 4. Set up the database in the terminal
+Don't run this code if you want the default recipes!!!
 ```python
 from app import db, myapp
 myapp.app_context().push()
