@@ -310,3 +310,58 @@
 - No recipes match the filter.  
 - System shows a “No results found” message.
 
+## 16. Use Case: View My Recipes  
+**Implemented by:** Tonny Lee  
+**Actors:** User, System  
+**Pre-condition:** User has logged in
+**Trigger:** User clicks “My Recipes” button.  
+**Primary Sequence:**  
+- User clicks “My Recipes” button  
+- System retrieves all recipes created by the user  
+- System displays the list of the user's recipes  
+
+**Primary Postconditions:**  
+- System displays all recipes created by the user.
+
+**Alternate Sequence:**  
+- No recipes found.  
+- System displays a message: “You have not created any recipes yet.”  
+
+---
+
+## 17. Use Case: View All Saved Recipes  
+**Implemented by:** Tonny Lee  
+**Actors:** User, System  
+**Pre-condition:** User has logged in
+**Trigger:** User clicks “My Favorites” button.  
+**Primary Sequence:**  
+- User clicks “Saved Recipes” button  
+- System retrieves all recipes saved by the user  
+- System displays the list of saved recipes  
+
+**Primary Postconditions:**  
+- System displays all recipes saved by the user.
+
+**Alternate Sequence:**  
+- No saved recipes found.  
+- System displays a message: “You have no saved recipes.”  
+
+---
+
+## 18. Use Case: Copy Link  
+**Implemented by:** Tonny Lee  
+**Actors:** User, System  
+**Pre-condition:** User is on the home page.  
+**Trigger:** User clicks the “Copy Link” icon or button.  
+**Primary Sequence:**  
+- User clicks the “Copy Link” icon/button next to a recipe  
+- System copies the recipe’s URL to the clipboard  
+- System displays a confirmation message: Link copied!
+
+**Primary Postconditions:**  
+- Recipe link is successfully copied to the clipboard.
+
+**Alternate Sequence:**  
+- Clipboard copy fails.  
+- System displays an error message: Unable to copy link. Please try again.
+
