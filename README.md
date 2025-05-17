@@ -42,30 +42,28 @@ python --version ## To check if Python is install, run this command in the termi
 ```bash
 git --version
 ```
-- Virtual Environment
-```bash
-pip install virtualenv
-```
+
 ### Installation Instructions
 1. Clone this repository
 ```bash
-git clone https://github.com/CMPE-131-Project
+git clone https://github.com/TonnyLee90/CMPE-131-Project.git
 ```
 2. Go into the project directory and create a virtual environment  
 ```bash
-cd pathToProject
-python -m venv venv
+cd CMPE-131-Project
+python3 -m venv venv
 
 # On Linux
 source venv/bin/activate
 
-# On window
+# On windows
 venv\Scripts\activate
 ```
 
 3. Install all dependencies
 ```bash
 pip install -r requirements.txt
+
 ```
 4. Set up the database in the terminal
 Don't run this code if you want the default recipes!!!
